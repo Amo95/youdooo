@@ -14,15 +14,11 @@
       <p class="w-full text-grey-darkest">
         <a href="#">{{ task.name }}</a>
       </p>
-      <a
-        class="bg-white hover:text-white text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-        href="/delete/{{ task.id }}">
-        Remove
-      </a>
-      <a
-        class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red bg-red-600"
-        href="/update/{{ task.id }}">
+      <a class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red bg-red-600" href="/update/{{ task.id }}">
         Update
+      </a>
+      <a class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-red hover:bg-red bg-red-600" href="/update/{{ task.id }}">
+        Remove
       </a>
     </div>
     {% endfor %}
