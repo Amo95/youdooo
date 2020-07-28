@@ -60,7 +60,7 @@ def update(id):
    else:
        title = "Update Task"
        return render_template('update.html', title=title, task=task)
-       
+
 if __name__ == "__main__":
    app.run(debug=True)
 
