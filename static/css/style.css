@@ -1,14 +1,12 @@
 body{
-	background-color: #6fe133;
-}
-
-button{
-	color: 
+	background-color: #80f4ff;
 }
 
 .bg-white{
 	border-radius: 25px;
-	background: linear-gradient(145deg, #64cb2e, #77f137);
-	box-shadow:  7px 7px 14px #61c42c, 
-             -7px -7px 14px #7dfe3a;
+	background: linear-gradient(145deg, #73dce6, #89ffff);
+	box-shadow:  7px 7px 14px #6fd4de, 
+	             -7px -7px 14px #91ffff;
+
+	transition-duration: 0.4s;
 }
