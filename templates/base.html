@@ -16,15 +16,6 @@
     </title>
   </head>
   <body>
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-          <ul>
-            {% for message in messages %}
-              <li>{{ message }}</li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-    {% endwith %}
     <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
       {% block content %}
 

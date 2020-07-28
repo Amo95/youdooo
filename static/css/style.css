@@ -5,3 +5,10 @@ body{
 button{
 	color: 
 }
+
+.bg-white{
+	border-radius: 25px;
+	background: linear-gradient(145deg, #64cb2e, #77f137);
+	box-shadow:  7px 7px 14px #61c42c, 
+             -7px -7px 14px #7dfe3a;
+}

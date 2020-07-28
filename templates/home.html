@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg" style="border-radius: 25px; background: linear-gradient(145deg, #64cb2e, #77f137); box-shadow:  7px 7px 14px #61c42c, -7px -7px 14px #7dfe3a;">
+<div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
   <div class="mb-4">
     <h1 class="text-grey-darkest">YouDoo :)</h1>
     <div class="flex mt-4">
@@ -15,7 +15,7 @@
         <a href="#">{{ task.name }}</a>
       </p>
       <a
-        class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red bg-red-600"
+        class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
         href="/delete/{{ task.id }}">
         Remove
       </a>
