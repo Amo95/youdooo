@@ -10,3 +10,15 @@ body{
 
 	transition-duration: 0.4s;
 }
+
+#btn-remove:hover{
+	color: red;
+}
+
+#input{
+
+	border-radius: 25px;
+  	box-shadow: inset 8px 8px 8px #cbced1,
+              inset -8px -8px 8px #ffffff;
+    background-color: #80f4ff;
+}
