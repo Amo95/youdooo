@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg" style="border-radius: 30px; background: #FFFFFF; box-shadow:  20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;">
+  <div class="mb-4">
+    <h1 class="text-grey-darkest">YouDoo :)</h1>
+    <div class="flex mt-4" style="display: flex;justify-content: center;align-items: center;">
+      {% include "partials/_form.html" %}
+    </div>
+  </div>
+  <div style=" margin-left: auto; margin-right: auto">
+    {% if tasks %}
+    {% for task in tasks %}
+    <div class="flex mb-4 items-center">
+      <p class="w-full text-grey-darkest">
+        <a href="#">{{ task.name }}</a>
+      </p>
+      <a
+        class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red bg-red-600"
+        href="/delete/{{ task.id }}">
+        Remove
+      </a>
+    </div>
+    {% endfor %}
+    {% else %}
+
+    <p class="text-center">No Task to display</p>
+
+    {% endif %}
+  </div>
+</div>
+
+{% endblock content %}
