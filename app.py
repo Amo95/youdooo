@@ -1,10 +1,12 @@
-from flask import Flask, render_template, request, redirect  # add
+from flask import Flask, render_template, request, redirect, url_for, flash  # add
 from flask_sqlalchemy import SQLAlchemy  # add
 from datetime import datetime  # add
+import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'  # add
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # add
+app.config["SECRET_KEY"] = os.urandom(24)
 db = SQLAlchemy(app)  # add
 
 # add
@@ -13,8 +15,7 @@ db = SQLAlchemy(app)  # add
 class Task(db.Model):
    id = db.Column(db.Integer, primary_key=True)
    name = db.Column(db.String(80), nullable=False)
-   created_at = db.Column(db.DateTime, nullable=False,
-                          default=datetime.now)
+   created_at = db.Column(db.DateTime, nullable=False, default=datetime.now)
 
    def __repr__(self):
        return f'Todo : {self.name}'
@@ -25,9 +26,14 @@ def home():
    if request.method == "POST": # add
        name = request.form['name']
        new_task = Task(name=name)
-       db.session.add(new_task)
-       db.session.commit()
-       return redirect('/')
+       print(name)
+       if len(name) > 0:
+       	flash("Enter something!")
+       	redirect("/")
+       else:
+	       db.session.add(new_task)
+	       db.session.commit()
+	       return redirect('/')
    else:
        tasks = Task.query.order_by(Task.created_at).all()  # add
    return render_template("home.html", tasks=tasks)  # add
