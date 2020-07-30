@@ -1,23 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="mb-4">
-  <h1 class="text-grey-darkest">{{ title }}</h1>
-  <div class="flex mt-4">
-    <form action="/update/{{ task.id }}" method="post" class="inline-flex">
-      <input
-        class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
-        placeholder="Add Todo"
-        type="text"
-        name="name"
-        value="{{ task.name }}"
-      />
-      <button
-        class="flex-no-shrink p-2 border-2 rounded text-teal border-teal hover:text-white hover:bg-teal bg-green-600"
-        type="submit"
-      >
-        Update
-      </button>
-    </form>
+<div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+
+  <div class="mb-4">
+    <img src="{{ url_for('static', filename='images/logo.svg') }}" class="images">
+    <h1 class="text-grey-darkest"><strong>{{ title }}</strong></h1>
+    <div class="flex mt-4">
+      <form action="/update/{{ task.id }}" method="post" class="inline-flex">
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" id="input" placeholder="Add Todo" type="text" name="name" value="{{ task.name }}" />
+          <button class="bg-white hover:text-white text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" id="btn-update" style="outline: none">
+            Update
+          </button>
+        </form>
+    </div>
   </div>
 </div>
 

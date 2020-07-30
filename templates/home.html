@@ -2,25 +2,26 @@
 {% block content %}
 <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
   <div class="mb-4">
-    <h1 class="text-grey-darkest">YouDoo :)</h1>
-    <div class="flex mt-4">
+    <img src="{{ url_for('static', filename='images/logo.svg') }}" class="images">
+    <div class="grid mt-4">
       {% include "partials/_form.html" %}
     </div>
   </div>
-  <div>
+  <div class="max-w-sm w-full lg:max-w-full lg:grid" id="todo-update">
     {% if tasks %}
     {% for task in tasks %}
-    <div class="flex mb-4 items-center">
+    <div class="grid mb-4 items-center">
       <p class="w-full text-grey-darkest">
         <a href="#">{{ task.name }}</a>
       </p>
-       <a class="bg-white hover:text-white text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" href="/update/{{ task.id }}">
-        Update
+      <a class="bg-white hover:text-white text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" href="/update/{{ task.id }}" id="btn-update">
+      Update
       </a>
       <a class="bg-white hover:text-white text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" href="/delete/{{ task.id }}" id="btn-remove">
         Remove
       </a>
     </div>
+    <hr>
     {% endfor %}
     {% else %}
 

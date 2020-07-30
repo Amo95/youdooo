@@ -1,12 +1,16 @@
+*{
+	outline: none;
+}
+
 body{
-	background-color: #80f4ff;
+	background-color: #fff;
 }
 
 .bg-white{
-	border-radius: 25px;
-	background: linear-gradient(145deg, #73dce6, #89ffff);
-	box-shadow:  7px 7px 14px #6fd4de, 
-	             -7px -7px 14px #91ffff;
+	border-radius: 50px;
+	background: linear-gradient(145deg, #e6e6e6, #ffffff);
+	box-shadow:  50px 50px 100px #dedede, 
+             -50px -50px 100px #ffffff;
 
 	transition-duration: 0.4s;
 }
@@ -15,10 +19,51 @@ body{
 	color: red;
 }
 
-#input{
+#btn-update:hover{
+	outline: none;
+	color: green;
+}
 
+#input{
+	margin: auto;
 	border-radius: 25px;
   	box-shadow: inset 8px 8px 8px #cbced1,
               inset -8px -8px 8px #ffffff;
-    background-color: #80f4ff;
+    background-color: #fff;
+}
+
+.images{
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 50%;
+  	height: 50%;
+}
+
+#div-body{
+	outline: none;
+}
+
+.mb-4{
+	outline: none;
+}
+
+#card{
+	margin: auto;
+}
+
+#btn-form:hover{
+	color: blue;
+}
+
+#todo-update{
+	margin: auto;
+	text-align: center;
+	border-radius: 15px;
+	height: 100%;
+	width: 100%;
+}
+
+button{
+	outline: none;
 }
