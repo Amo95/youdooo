@@ -36,4 +36,4 @@ Type ```evillimiter``` or ```python3 bin/evillimiter``` to run the tool.
 
 - 🔭 I’m currently working on this page.
 
-Join over 600,000 python developers in learning how to code: https://thecodex.me
+sample page: https://youdooo.herokuapp.com
