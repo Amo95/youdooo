@@ -15,6 +15,9 @@ body{
 	transition-duration: 0.4s;
 }
 
+#btn-update, #btn-remove{
+	color: #000000;
+}
 #btn-remove:hover{
 	color: red;
 }
