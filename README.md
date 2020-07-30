@@ -18,8 +18,7 @@ git clone https://github.com/amo95/youdooo.git
 cd youdooo
 pip3 install -r requirements.txt
 
-python3 app.py OR
-in terminal type:
+python3 app.py OR in terminal type:
 $ export FLASK_APP=app.py
 $ export FLASK_ENV=development
 $ flask run
