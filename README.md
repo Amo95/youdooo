@@ -21,6 +21,9 @@ python3 app.py OR in terminal type:
 $ export FLASK_APP=app.py
 $ export FLASK_ENV=development
 $ flask run
+
+From browser type/search:
+$ ip_address:<port> - localhost:5000
 ```
 
 Alternatively, you can download a desired version from the [Release page](https://github.com/bitbrute/evillimiter/releases).<br>
