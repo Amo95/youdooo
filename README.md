@@ -4,4 +4,36 @@ I made this project just for fun this project allows you to create simple todo l
 
 Skills: PYTHON / HTML / CSS
 
-- 🔭 I’m currently working on this page. 
+## Requirements
+- Python 3 or greater
+- python-flask
+- python-sqlalchemy
+
+Possibly missing python packages will be installed during the installation process.
+
+## Installation
+
+```bash
+git clone https://github.com/amo95/youdooo.git
+cd youdooo
+pip3 install -r requirements.txt
+
+python3 app.py OR
+in terminal type:
+$ export FLASK_APP=app.py
+$ export FLASK_ENV=development
+$ flask run
+```
+
+Alternatively, you can download a desired version from the [Release page](https://github.com/bitbrute/evillimiter/releases).<br>
+
+## Usage
+
+Type ```evillimiter``` or ```python3 bin/evillimiter``` to run the tool.
+
+```evillimiter``` will try to resolve required information (network interface, netmask, gateway address, ...) on its own, automatically.
+
+
+- 🔭 I’m currently working on this page.
+
+Join over 600,000 python developers in learning how to code: https://thecodex.me
