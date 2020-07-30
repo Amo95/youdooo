@@ -1,6 +1,6 @@
 ### Hi there 👋, Youdooo
 #### A simple todo-list app with flask. Tried neumorphism. Still learning...
-###### Credit: [Tailwindcss](https://tailwindcss.com/)
+###### Credit: [Tailwindcss](https://tailwindcss.com/) <br><br>
 I made this project just for fun this project allows you to create simple todo list for your daily routine on web.
 
 Skills: PYTHON / HTML / CSS
@@ -29,8 +29,6 @@ $ flask run
 From browser type/search:
 $ ip_address:<port> - localhost:5000
 ```
-
-Alternatively, you can download a desired version from the [Release page](https://github.com/bitbrute/evillimiter/releases).<br>
 
 ## Usage
 Type ```python3 app.py``` or ```flask run``` to start flask server.
