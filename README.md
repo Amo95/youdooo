@@ -12,7 +12,6 @@ Skills: PYTHON / HTML / CSS
 Possibly missing python packages will be installed during the installation process.
 
 ## Installation
-
 ```bash
 git clone https://github.com/amo95/youdooo.git
 cd youdooo
@@ -27,11 +26,7 @@ $ flask run
 Alternatively, you can download a desired version from the [Release page](https://github.com/bitbrute/evillimiter/releases).<br>
 
 ## Usage
-
-Type ```evillimiter``` or ```python3 bin/evillimiter``` to run the tool.
-
-```evillimiter``` will try to resolve required information (network interface, netmask, gateway address, ...) on its own, automatically.
-
+Type ```python3 app.py``` or ```flask run``` to start flask server.
 
 - 🔭 I’m currently working on this page.
 
