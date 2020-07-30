@@ -5,9 +5,12 @@ I made this project just for fun this project allows you to create simple todo l
 Skills: PYTHON / HTML / CSS
 
 ## Requirements
+- pip3
+- pipenv
 - Python 3 or greater
 - python-flask
 - python-sqlalchemy
+- Tailwind CDN
 
 Possibly missing python packages will be installed during the installation process.
 
