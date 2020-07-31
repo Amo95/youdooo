@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for  # add
 from flask_sqlalchemy import SQLAlchemy  # add
 from datetime import datetime  # add
-from flask_optimize import FlaskOptimize
+# from flask_optimize import FlaskOptimize
 
 app = Flask(__name__)
-app.config['OPTIMIZE_ALL_RESPONSE'] = True
-flask_optimize = FlaskOptimize()
+# app.config['OPTIMIZE_ALL_RESPONSE'] = True
+# flask_optimize = FlaskOptimize()
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'  # add
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # add
@@ -23,7 +23,7 @@ class Task(db.Model):
 
 
 @app.route("/", methods=['POST', 'GET'])
-@flask_optimize.optimize()
+# @flask_optimize.optimize()
 def home():
    if request.method == "POST": # add
        name = request.form['name']
@@ -36,7 +36,7 @@ def home():
    return render_template("home.html", tasks=tasks)  # add
 
 @app.route('/delete/<int:id>')
-@flask_optimize.optimize()
+# @flask_optimize.optimize()
 def delete(id):
    task = Task.query.get_or_404(id)
 
@@ -49,7 +49,7 @@ def delete(id):
 
 # update task
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
-@flask_optimize.optimize()
+# @flask_optimize.optimize()
 def update(id):
    task = Task.query.get_or_404(id)
 
@@ -67,7 +67,7 @@ def update(id):
        return render_template('update.html', title=title, task=task)
 
 @app.errorhandler(404)
-@flask_optimize.optimize()
+# @flask_optimize.optimize()
 def errror_404_page(error):
   return render_template("error.html")
 
