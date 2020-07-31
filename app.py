@@ -1,15 +1,17 @@
-from flask import Flask, render_template, request, redirect, url_for  # add
-from flask_sqlalchemy import SQLAlchemy  # add
-from datetime import datetime  # add
-# from flask_optimize import FlaskOptimize
+from flask import Flask, render_template, request, redirect, url_for  # add flask modules
+from flask_sqlalchemy import SQLAlchemy  # add flask_sqlalchemy module for database
+from datetime import datetime
+# from flask_optimize import FlaskOptimize # optimize flask endpoints by compressing code
+import os
 
 app = Flask(__name__)
-# app.config['OPTIMIZE_ALL_RESPONSE'] = True
-# flask_optimize = FlaskOptimize()
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'  # add
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # add
-db = SQLAlchemy(app)  # add
+location = os.path.abspath(os.getcwd()) + "/todo.db"
+# flask_optimize = FlaskOptimize() # initialize optimizer
+
+app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{location}' # add absolute path to db
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # load modification in db
+db = SQLAlchemy(app)  # start sqlalchemy
 
 
 class Task(db.Model):
@@ -21,19 +23,19 @@ class Task(db.Model):
    def __repr__(self):
        return f'Todo : {self.name}'
 
-
+# create endpoints
 @app.route("/", methods=['POST', 'GET'])
 # @flask_optimize.optimize()
 def home():
-   if request.method == "POST": # add
+   if request.method == "POST": # run this when request is post
        name = request.form['name']
        new_task = Task(name=name)
        db.session.add(new_task)
        db.session.commit()
        return redirect('/')
    else:
-       tasks = Task.query.order_by(Task.created_at).all()  # add
-   return render_template("home.html", tasks=tasks)  # add
+       tasks = Task.query.order_by(Task.created_at).all()  # order task by duration
+   return render_template("home.html", tasks=tasks)  # render home.html 
 
 @app.route('/delete/<int:id>')
 # @flask_optimize.optimize()
