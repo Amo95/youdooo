@@ -36,6 +36,7 @@ def home():
    return render_template("home.html", tasks=tasks)  # add
 
 @app.route('/delete/<int:id>')
+@flask_optimize.optimize()
 def delete(id):
    task = Task.query.get_or_404(id)
 
@@ -48,6 +49,7 @@ def delete(id):
 
 # update task
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
+@flask_optimize.optimize()
 def update(id):
    task = Task.query.get_or_404(id)
 
@@ -65,6 +67,7 @@ def update(id):
        return render_template('update.html', title=title, task=task)
 
 @app.errorhandler(404)
+@flask_optimize.optimize()
 def errror_404_page(error):
   return render_template("error.html")
 
