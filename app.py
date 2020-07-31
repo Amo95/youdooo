@@ -1,8 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for  # add
 from flask_sqlalchemy import SQLAlchemy  # add
 from datetime import datetime  # add
+from flask_optimize import FlaskOptimize
 
 app = Flask(__name__)
+app.config['OPTIMIZE_ALL_RESPONSE'] = True
+flask_optimize = FlaskOptimize()
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'  # add
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # add
 db = SQLAlchemy(app)  # add
@@ -19,6 +23,7 @@ class Task(db.Model):
 
 
 @app.route("/", methods=['POST', 'GET'])
+@flask_optimize.optimize()
 def home():
    if request.method == "POST": # add
        name = request.form['name']
