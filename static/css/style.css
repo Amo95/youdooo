@@ -7,6 +7,7 @@ body{
 }
 
 .bg-white{
+	margin-top: 5%;
 	border-radius: 50px;
 	background: linear-gradient(145deg, #e6e6e6, #ffffff);
 	box-shadow:  50px 50px 100px #dedede, 
@@ -69,4 +70,11 @@ body{
 
 button{
 	outline: none;
+}
+
+#sub-todo{
+	border-radius: 15%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	box-sizing: border-box;
+	padding: 10%;
 }

@@ -5,8 +5,8 @@
   <div class="mb-4">
     <img src="{{ url_for('static', filename='images/logo.svg') }}" class="images">
     <h1 class="text-grey-darkest">{{ title }}</h1>
-    <div class="flex mt-4">
-      <form action="/update/{{ task.id }}" method="post" class="inline-flex">
+    <div class="grid mt-4">
+      <form action="/update/{{ task.id }}" method="post" class="grid">
           <input class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" id="input" placeholder="Add Todo" type="text" name="name" value="{{ task.name }}" />
           <button class="bg-white hover:text-white text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" id="btn-update" style="outline: none">
             Update

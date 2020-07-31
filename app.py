@@ -7,8 +7,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'  # add
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # add
 db = SQLAlchemy(app)  # add
 
-# add
-
 
 class Task(db.Model):
    id = db.Column(db.Integer, primary_key=True)

@@ -10,7 +10,8 @@
   <div class="max-w-sm w-full lg:max-w-full lg:grid" id="todo-update">
     {% if tasks %}
     {% for task in tasks %}
-    <div class="grid mb-4 items-center">
+    <div class="grid mb-4 items-center" id="sub-todo">
+      <hr>
       <p class="w-full text-grey-darkest">
         <a href="#">{{ task.name }}</a>
       </p>
