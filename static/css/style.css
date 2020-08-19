@@ -1,11 +1,6 @@
-*{
-	outline: none;
-}
-
 body{
 	background-color: #fff;
 }
-
 .bg-white{
 	margin: 5% auto 0 auto;
 	border-radius: 50px;
@@ -14,18 +9,6 @@ body{
              -50px -50px 100px #ffffff;
 
 	transition-duration: 0.4s;
-}
-
-#btn-update, #btn-remove{
-	color: #000000;
-}
-#btn-remove:hover{
-	color: red;
-}
-
-#btn-update:hover{
-	outline: none;
-	color: green;
 }
 
 #input{
@@ -44,20 +27,8 @@ body{
   	height: 50%;
 }
 
-#div-body{
-	outline: none;
-}
-
-.mb-4{
-	outline: none;
-}
-
 #card{
 	margin: auto;
-}
-
-#btn-form:hover{
-	color: blue;
 }
 
 #todo-update{
@@ -68,22 +39,9 @@ body{
 	width: 100%;
 }
 
-button{
-	outline: none;
-}
-
 #sub-todo{
 	border-radius: 15%;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	box-sizing: border-box;
 	padding: 10%;
 }
-
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-	#div-body {
-	  width: 100%;
-	  display: block;
-	  margin-bottom: 20px;
-	}
-  }
