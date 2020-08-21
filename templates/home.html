@@ -1,32 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+<div class="bg-purple-900 rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
   <div class="mb-4">
     <img src="{{ url_for('static', filename='images/logo.svg') }}" class="images">
     <div class="grid mt-4">
       {% include "partials/_form.html" %}
     </div>
   </div>
-  <div class="max-w-sm w-full lg:max-w-full lg:grid" id="todo-update">
+  <div class="max-w-sm w-full lg:max-w-full lg:grid" id="centerr">
     {% if tasks %}
     {% for task in tasks %}
-    <div class="grid mb-4 items-center" id="sub-todo">
-      <hr>
-      <p class="w-full text-grey-darkest">
+    <div class="flex w-full py-2 px-3 mr-4 mb-4 items-center">
+      <p class="text-white w-full text-grey-darkest">
         <a href="#">{{ task.name }}</a>
       </p>
-      <a class="bg-white hover:text-green-600 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" href="/update/{{ task.id }}" id="btn-update">
-      Update
+      <a href="/update/{{ task.id }}">
+        <svg viewBox="0 0 20 20" fill="white" class="view-grid-add w-6 h-6"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z"></path></svg>
       </a>
-      <a class="bg-white hover:text-red-600 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" href="/delete/{{ task.id }}" id="btn-remove">
-        Remove
+
+      <!-- delete -->
+      <a href="/delete/{{ task.id }}">
+        <svg viewBox="0 0 20 20" fill="white" class="trash w-6 h-6"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
       </a>
     </div>
-    <hr>
     {% endfor %}
     {% else %}
 
-    <p class="text-center">No Task to display</p>
+    <p class="text-white text-center">No Task to display</p>
 
     {% endif %}
   </div>

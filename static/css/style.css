@@ -1,22 +1,15 @@
 body{
-	background-color: #fff;
-}
-.bg-white{
-	margin: 5% auto 0 auto;
-	border-radius: 50px;
-	background: linear-gradient(145deg, #e6e6e6, #ffffff);
-	box-shadow:  50px 50px 100px #dedede, 
-             -50px -50px 100px #ffffff;
-
-	transition-duration: 0.4s;
+	background-color: #44337a;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 #input{
 	margin: auto;
-	border-radius: 25px;
-  	box-shadow: inset 8px 8px 8px #cbced1,
-              inset -8px -8px 8px #ffffff;
-    background-color: #fff;
+	border-radius: 50px;
+	background: #513d8d;
+	box-shadow:  20px 20px 60px #453478, 
+				-20px -20px 60px #5d46a2;
 }
 
 .images{
@@ -29,19 +22,4 @@ body{
 
 #card{
 	margin: auto;
-}
-
-#todo-update{
-	margin: auto;
-	text-align: center;
-	border-radius: 15px;
-	height: 100%;
-	width: 100%;
-}
-
-#sub-todo{
-	border-radius: 15%;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	box-sizing: border-box;
-	padding: 10%;
 }
