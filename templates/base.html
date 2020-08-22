@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
     <title>
       {% if title %}
@@ -16,10 +15,20 @@
     </title>
   </head>
   <body>
+    <div class="loader-container">
+      <div class="loader"></div>
+    </div>
+
     <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans justify-start sm:justify-center md:justify-end lg:justify-between xl:justify-around" id="div-body">
       {% block content %}
 
       {% endblock content %}
     </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script>
+        $(window).on("load",function(){
+            $(".loader-container").fadeOut(1000);
+        });
+    </script>
   </body>
 </html>
