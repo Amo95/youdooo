@@ -36,4 +36,4 @@ Type ```python3 app.py``` or ```flask run``` to start flask server.
 
 - 🔭 I’m currently working on this page.
 
-sample page: https://youdooo.herokuapp.com
+sample page: [youdooo.com](https://youdooo.herokuapp.com)
