@@ -27,7 +27,7 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
     <script>
         $(window).on("load",function(){
-            $(".loader-container").fadeOut(1000);
+            $(".loader-container").fadeToggle(5000);
         });
     </script>
   </body>

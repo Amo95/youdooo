@@ -24,8 +24,8 @@
 	width: inherit;
 	height: inherit;
 	position: absolute;
-	top: 35%;
-	left: 40%;
+	top: 30%;
+	left: 30%;
 	animation: loader 2s linear infinite;
 	opacity: 0;
 }
