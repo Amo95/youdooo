@@ -4,7 +4,7 @@
 
   <div class="mb-4">
     <img src="{{ url_for('static', filename='images/logo.svg') }}" class="images">
-    <h1 class="text-white text-center font-bold text-2xl text-grey-darkest">{{ title }}</h1>
+    <p class="text-white text-center font-bold text-2xl text-grey-darkest">{{ title }}</p>
     <div class="flex mt-4 items-center justify-center">
       <form action="/update/{{ task.id }}" method="post" class="grid">
         <div class="flex">
