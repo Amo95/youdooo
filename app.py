@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for  # add flask modules
 from flask_sqlalchemy import SQLAlchemy  # add flask_sqlalchemy module for database
 from datetime import datetime
-# from flask_optimize import FlaskOptimize # optimize flask endpoints by compressing code
 import os
 
 app = Flask(__name__)
@@ -75,5 +74,5 @@ def errror_404_page(error):
 
 
 if __name__ == "__main__":
-   app.run(debug=True)
+   app.run()
 
