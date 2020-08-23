@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for  # add flask modules
+from flask import Flask, render_template, request, redirect, url_for, flash  # add flask modules
 from flask_sqlalchemy import SQLAlchemy  # add flask_sqlalchemy module for database
 from datetime import datetime
 import os
@@ -10,6 +10,7 @@ location = os.path.abspath(os.getcwd()) + "/todo.db"
 
 app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{location}' # add absolute path to db
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # load modification in db
+app.config["SECRET_KEY"] = os.urandom(24)
 db = SQLAlchemy(app)  # start sqlalchemy
 
 
@@ -26,15 +27,18 @@ class Task(db.Model):
 @app.route("/", methods=['POST', 'GET'])
 # @flask_optimize.optimize()
 def home():
-   if request.method == "POST": # run this when request is post
-       name = request.form['name']
-       new_task = Task(name=name)
-       db.session.add(new_task)
-       db.session.commit()
-       return redirect('/')
-   else:
-       tasks = Task.query.order_by(Task.created_at).all()  # order task by duration
-   return render_template("home.html", tasks=tasks)  # render home.html 
+  if request.method == "POST": # run this when request is post
+    name = request.form['name']
+    if len(name.strip()) == 0:
+      flash("Enter Something!!")
+    else:
+      new_task = Task(name=name)
+      db.session.add(new_task)
+      db.session.commit()
+    return redirect('/')
+  else:
+     tasks = Task.query.order_by(Task.created_at).all()  # order task by duration
+  return render_template("home.html", tasks=tasks)  # render home.html 
 
 @app.route('/delete/<int:id>')
 # @flask_optimize.optimize()

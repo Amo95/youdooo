@@ -15,6 +15,19 @@
     </title>
   </head>
   <body>
+
+    <!-- flash message -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for msg in messages %}
+          <ul>
+            <li><div class="bg-white text-center font-semibold text-red-700">{{ msg }}</div></li>
+          </ul>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <!-- end -->
+
     <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans justify-start sm:justify-center md:justify-end lg:justify-between xl:justify-around" id="div-body">
       {% block content %}
 
