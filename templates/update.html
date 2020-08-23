@@ -1,10 +1,9 @@
+<div class="bg-white text-center font-semibold text-indigo-900">{{ title }}</div>
 {% extends 'base.html' %}
 {% block content %}
 <div class="bg-purple-900 rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
-
   <div class="mb-4">
     <img src="{{ url_for('static', filename='images/logo.svg') }}" class="images">
-    <p class="bg-white rounded-full text-indigo-900 text-center text-grey-darkest">{{ title }}</p>
     <div class="flex mt-4 items-center justify-center">
       <form action="/update/{{ task.id }}" method="post" class="grid">
         <div class="flex">
