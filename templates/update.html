@@ -1,9 +1,8 @@
-<p class="bg-white text-center font-semibold text-indigo-900">{{ title }}</p>
+<p class="bg-white text-center top-0 w-full absolute font-semibold text-indigo-900">{{ title }}</p>
 {% extends 'base.html' %}
 {% block content %}
-<div class="bg-purple-900 rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+<div class="bg-purple-900 rounded m-8 shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
   <div class="mb-4">
-    <img src="{{ url_for('static', filename='images/logo.svg') }}" class="images">
     <div class="flex mt-4 items-center justify-center">
       <form action="/update/{{ task.id }}" method="post" class="grid">
         <div class="flex">
