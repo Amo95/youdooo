@@ -13,7 +13,7 @@ Skills: PYTHON / HTML / CSS
 - python-flask
 - python-sqlalchemy
 - Tailwind CDN
-- urllib,request
+- urllib.request
 
 Possibly missing python packages will be installed during the installation process.
 
