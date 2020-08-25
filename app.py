@@ -1,10 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, jsonify  # add flask modules
+from flask import Flask, render_template, request, redirect, url_for, flash  # add flask modules
 from flask_sqlalchemy import SQLAlchemy  # add flask_sqlalchemy module for database
 from datetime import datetime
-from flask_caching import Cache
+# from flask_caching import Cache
 import os
 
-cache = Cache()
 app = Flask(__name__)
 
 location = os.path.abspath(os.getcwd()) + "/todo.db"
@@ -15,7 +14,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{location}' # add absolute p
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # load modification in db
 app.config["SECRET_KEY"] = os.urandom(24)
 db = SQLAlchemy(app)  # start sqlalchemy
-cache.init_app(app)
 
 
 class Task(db.Model):
@@ -30,7 +28,6 @@ class Task(db.Model):
 # create endpoints
 @app.route("/", methods=['POST', 'GET'])
 # @flask_optimize.optimize()
-@cache.cached(timeout=30)
 def home():
   if request.method == "POST": # run this when request is post
     name = request.form['name']
@@ -47,7 +44,6 @@ def home():
 
 @app.route('/delete/<int:id>')
 # @flask_optimize.optimize()
-@cache.cached(timeout=30)
 def delete(id):
    task = Task.query.get_or_404(id)
 
@@ -62,7 +58,6 @@ def delete(id):
 # update task
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 # @flask_optimize.optimize()
-@cache.cached(timeout=30)
 def update(id):
    task = Task.query.get_or_404(id)
 
@@ -81,7 +76,6 @@ def update(id):
 
 @app.errorhandler(404)
 # @flask_optimize.optimize()
-@cache.cached(timeout=30)
 def errror_404_page(error):
   return render_template("error.html")
 
