@@ -30,7 +30,7 @@ class Task(db.Model):
 # create endpoints
 @app.route("/", methods=['POST', 'GET'])
 # @flask_optimize.optimize()
-@cache.cached(timeout=60)
+@cache.cached(timeout=30)
 def home():
   if request.method == "POST": # run this when request is post
     name = request.form['name']
@@ -47,7 +47,7 @@ def home():
 
 @app.route('/delete/<int:id>')
 # @flask_optimize.optimize()
-@cache.cached(timeout=60)
+@cache.cached(timeout=30)
 def delete(id):
    task = Task.query.get_or_404(id)
 
@@ -62,7 +62,7 @@ def delete(id):
 # update task
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 # @flask_optimize.optimize()
-@cache.cached(timeout=60)
+@cache.cached(timeout=30)
 def update(id):
    task = Task.query.get_or_404(id)
 
@@ -81,7 +81,7 @@ def update(id):
 
 @app.errorhandler(404)
 # @flask_optimize.optimize()
-@cache.cached(timeout=60)
+@cache.cached(timeout=30)
 def errror_404_page(error):
   return render_template("error.html")
 
